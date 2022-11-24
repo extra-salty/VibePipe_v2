@@ -3,6 +3,7 @@ import { HueIcon, SaturationIcon, LightnessIcon } from "./icons.style";
 import { HueSlider, SaturationSlider, LightnessSlider } from "./sliders.style";
 import { Control, HueControl } from "./control.style";
 import { setHue, setSaturation, setLightness } from "../colorSlice";
+import { webSocket } from "../../..";
 
 export const HsvGrid = () => {
   const { hue, saturation, lightness } = useAppSelector(state => state.color);
@@ -10,10 +11,11 @@ export const HsvGrid = () => {
 
   const updateGlobalHSV = (hue: string) => {
     dispatch(setHue(hue));
+    webSocket.send(`${hue}`);
 
-    fetch("/hsv", { method: "PUT", body: hue })
-      .then(response => response.text())
-      .catch(error => console.log("Error: ", error));
+    // fetch(`/hsv?hue=${hue}`, { method: "PUT", body: hue })
+    //   .then(response => response.text())
+    //   .catch(error => console.log("Error: ", error));
   };
 
   return (

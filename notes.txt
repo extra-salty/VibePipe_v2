@@ -2,3 +2,4 @@ Todos:
 - Implement lazy routing where possible
 - useEffect Cleanup - stop fetching when switching routes, AbortController
 - add NotFound route
+- mDNS

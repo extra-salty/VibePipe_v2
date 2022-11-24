@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
 import { App } from "./App";
+import { initWebSocket } from "./app/websocket";
 import "./index.css";
 
 const root = ReactDOM.createRoot(
@@ -19,3 +20,5 @@ root.render(
     </Provider>
   </React.StrictMode>
 );
+
+export const webSocket = initWebSocket();

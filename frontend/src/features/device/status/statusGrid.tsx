@@ -12,9 +12,9 @@ export const StatusGrid = () => {
   };
 
   const handleOnboardLedState = (onboardLedState: boolean) => {
-    fetch("/led", { method: "PUT", body: onboardLedState ? "0" : "1" })
+    fetch("/led?state=true", { method: "PUT", body: "asdasd" })
       .then(response => response.text())
-      .then(state => setOnboardLedState(state))
+      .then(text => console.log(text))
       .catch(error => console.log("Error: ", error));
   };
 

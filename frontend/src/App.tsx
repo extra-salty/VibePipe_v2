@@ -3,7 +3,6 @@ import { Home } from "./routes/home";
 import { Settings } from "./routes/settings";
 import "./App.css";
 
-
 export const App = () => {
   return (
     <>
