@@ -10,7 +10,6 @@ type InitialState = {
   hue: number;
   saturation: number;
   lightness: number;
-  brightness: number;
   effectGrid: boolean[];
   ledGrid: string[][];
 };
@@ -19,7 +18,6 @@ const initialState: InitialState = {
   hue: 0,
   saturation: 100,
   lightness: 50,
-  brightness: 0,
   effectGrid: initialEffectGrid,
   ledGrid: initialLedGrid,
 };
